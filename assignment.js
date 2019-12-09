@@ -1,20 +1,21 @@
 const task3Element = document.getElementById('task-3');
 
-task3Element.addEventListener('click', outputTextOfChoice);
-
-function outputTextOfChoice(){
-    alert('Text of choice');
+function greet() {
+  alert('Hi there!');
 }
 
-function outputName(name){
-    alert('Name: ' + name);
+function greetUser(userName) {
+  alert('Hi ' + userName);
 }
 
-function takesInThreeParams(param1, param2, param3){
-    const result = param1 + ' ' + param2 + ' ' + param3;
-    alert(result);
+function combine(str1, str2, str3) {
+  const combinedText = `${str1} ${str2} ${str3}`;
+  return combinedText;
 }
 
-outputTextOfChoice();
-outputName('Corey');
-takesInThreeParams('PARAM1', 'PARAM2', 'PARAM3');
+greetUser('Max');
+
+task3Element.addEventListener('click', greet);
+
+const combinedString = combine('Hi', 'there', '!');
+alert(combinedString);

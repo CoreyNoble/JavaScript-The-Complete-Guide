@@ -1,11 +1,21 @@
-let userInput = 15;
-let result;
+const task3Element = document.getElementById('task-3');
 
-result = userInput + 18;
+function greet() {
+  alert('Hi there!');
+}
 
-result = result - 1;
-result = result * 2;
-result = result / 3;
+function greetUser(userName) {
+  alert('Hi ' + userName);
+}
 
-alert('Result: ' + result);
-alert('User Input: ' + userInput);
+function combine(str1, str2, str3) {
+  const combinedText = `${str1} ${str2} ${str3}`;
+  return combinedText;
+}
+
+greetUser('Max');
+
+task3Element.addEventListener('click', greet);
+
+const combinedString = combine('Hi', 'there', '!');
+alert(combinedString);

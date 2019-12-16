@@ -171,6 +171,12 @@ function printLogHandler() {
         console.log('---------------');
     }
 
+    let j = 0;
+    do {
+        console.log(j);
+        j++; 
+    } while (j < 3);
+
     // for (let i = 10; i > 0;) {
     //     i--;
     //     console.log(i);

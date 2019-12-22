@@ -15,6 +15,9 @@
 
 // greet();
 
-console.log(userName);
+'use strict';
 
-var userName = 'Max';
+const userName = 'Max';
+var undefined = 5;
+
+console.log(userName);

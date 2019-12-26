@@ -1,17 +1,19 @@
 // 1
-let item1a = document.getElementById('task-1');
-item1a.style.backgroundColor = 'black';
+const task1El1 = document.getElementById('task-1');
+task1El1.style.backgroundColor = 'black';
 
-let item1b = document.querySelector('#task-1');
-item1b.style.color = 'white';
+const task1El2 = document.querySelector('li');
+task1El2.style.color = 'white';
 
 // 2
-let title2a = document.querySelector('title');
-title2a.textContent = 'Assignment 2a - Solved!';
+// const docTitle1 = document.querySelector('title');
+// docTitle1.textContent = 'Assignment 2a - Solved!';
 
-let title2b = document.querySelector('head').title;
-title2b.title = 'Assignment 2b - Solved';
+const docHead = document.head;
+const docTitle2 = docHead.querySelector('title');
+docTitle2.textContent = 'Assignment 2b - Solved';
 
 // 3
-const h1 = document.querySelector('h1');
-h1.textContent = 'Assignment 3 - Solved!';
+// const h1 = document.querySelector('h1');
+const h1 = document.getElementsByTagName('h1');
+h1[0].textContent = 'Assignment 3 - Solved!';

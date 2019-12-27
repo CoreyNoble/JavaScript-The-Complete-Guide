@@ -9,7 +9,6 @@ const cancelAddMovieButton = addMovieModal.querySelector('.btn--passive');
 const confirmAddMovieButton = cancelAddMovieButton.nextElementSibling;
 const userInputs = addMovieModal.querySelectorAll('input');
 // const userInputs = addMovieModal.getElementsByTagName('input');
-
 const entryTextSection = document.getElementById('entry-text');
 
 const movies = [];
@@ -25,14 +24,14 @@ const updateUI = () => {
 const renderNewMovieElement = (title, imageUrl, rating) => {
   const newMovieElement = document.createElement('li');
   newMovieElement.className = 'movie-element';
-  newMovieElement.innerHtml = `
-  <div class="movie-element__image">
-    <img src="${imageUrl}" alt="${title}">
-  </div>
-  <div class="movie-element__info">
-    <h2>${title}</h2>
-    <p>${rating}/5 stars</p>
-  </div>
+  newMovieElement.innerHTML = `
+    <div class="movie-element__image">
+      <img src="${imageUrl}" alt="${title}">
+    </div>
+    <div class="movie-element__info">
+      <h2>${title}</h2>
+      <p>${rating}/5 stars</p>
+    </div>
   `;
   const listRoot = document.getElementById('movie-list');
   listRoot.append(newMovieElement);
@@ -43,6 +42,7 @@ const toggleBackdrop = () => {
 };
 
 const toggleMovieModal = () => {
+  // function() {}
   addMovieModal.classList.toggle('visible');
   toggleBackdrop();
 };
@@ -51,7 +51,7 @@ const clearMovieInput = () => {
   for (const usrInput of userInputs) {
     usrInput.value = '';
   }
-}
+};
 
 const cancelAddMovieHandler = () => {
   toggleMovieModal();

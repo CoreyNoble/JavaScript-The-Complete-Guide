@@ -93,14 +93,14 @@ const prices = [10.99, 5.99, 3.99, 6.59];
 const tax = 0.19;
 
 const taxAdjustedPrices = prices.map((price, idx, prices) => {
-  const priceObj = {index: idx, taxAdjPrice: price * (1 + tax)}
+  const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
   return priceObj;
 });
 
 // console.log(prices, taxAdjustedPrices);
 
 const sortedPrices = prices.sort((a, b) => {
-  if (a > b){
+  if (a > b) {
     return -1;
   } else if (a === b) {
     return 0;
@@ -122,7 +122,9 @@ console.log(filteredArray);
 
 // console.log(sum);
 
-const sum = prices.reduce((prevValue, curValue) => {prevValue + curValue}, 0);
+const sum = prices.reduce((prevValue, curValue) => {
+  prevValue + curValue;
+}, 0);
 
 console.log(sum);
 
@@ -135,3 +137,23 @@ console.log(transformedData);
 const nameFragments = ['Max', 'Schwarz'];
 const name = nameFragments.join(' ');
 console.log(name);
+
+const copiedNameFragments = [...nameFragments];
+nameFragments.push('Mr');
+console.log(nameFragments, copiedNameFragments);
+
+console.log(Math.min(...prices));
+
+const persons = [
+  { name: 'Max', age: 30 },
+  { name: 'Manuel', age: 31 }
+];
+const copiedPersons = persons.map(person => ({
+  name: person.name,
+  age: person.age
+}));
+
+persons.push({ name: 'Anna', age: 29 });
+persons[0].age = 31;
+
+console.log(persons, copiedPersons);

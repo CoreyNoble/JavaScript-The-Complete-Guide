@@ -38,11 +38,22 @@
 
 
 // WEAK SET
-let person = {name: 'Max'};
-const persons = new WeakSet();
-persons.add(person);
+// let person = {name: 'Max'};
+// const persons = new WeakSet();
+// persons.add(person);
 
-// ... some operations
+// // .... some operations
+// person = null;
+
+// console.log(persons);
+
+
+// WEAK MAP
+let person = {name: 'Max'};
+const personData = new WeakMap();
+personData.set(person, 'Extra info!');
+
+// .... some operations
 person = null;
 
-console.log(persons);
+console.log(personData);

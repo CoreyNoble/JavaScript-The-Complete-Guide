@@ -1,52 +1,59 @@
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numbers = [1, -22, 100, 4, 5, 6];
 
 // 1a
-const filteredNumbers = numbers.filter(num => num > 5);
-console.log(filteredNumbers);
+const numGreater5 = numbers.filter(val => val > 5);
+console.log(numGreater5);
 
-// 1b !!!
-const mappedObject = {};
-const mappedNumbers = numbers.map(num => {
-  mappedObject.number = num;
-});
-console.log(mappedObject);
+// 1b
+const mappedNumbers = numbers.map(val => ({num: val}));
+console.log(mappedNumbers);
 
-// 1c !!!
-const multipliedNumbers = numbers.reduce(num => {
-  let newNum = newNum*num;
-});
-console.log(multipliedNumbers);
+// 1c
+const multiplication = numbers.reduce(
+  (curResult, curValue) => curResult * curValue,
+  1
+);
+console.log(multiplication);
 
 
-// 2 !!!
-const findMax = (...numbers) => {
-  // Find the max number
-  const maxNumber = numbers.map(num => {
-
-  });
-  console.log(maxNumber);
+// 2
+function findMax(...nums) {
+  let curMax = nums[0];
+  for (const num of nums) {
+    if (num > curMax) {
+      curMax = num;
+    }
+  }
+  return curMax;
 };
 
-findMax(numbers);
+console.log(findMax(...numbers));
 
 
-// 3 !!!
-const findMinMax = (...numbers) => {
-  const [minNumber, maxNumber] = numbers.map(num => {
-
-  });
-  console.log(minNumber, maxNumber);
+// 3 
+function findMinMax(...nums) {
+  let curMax = nums[0];
+  let curMin = nums[0];
+  for (const num of nums) {
+    if (num > curMax) {
+      curMax = num;
+    }
+    if (num < curMin) {
+      curMin = num;
+    }
+  }
+  return [curMin, curMax];
 };
 
-findMinMax(numbers);
+const [min, max] = findMinMax(...numbers);
+
+console.log(min, max);
 
 
-// 4 !!!
-const noDuplicateValues = (...newList) => {
-  const filterDuplicates = newList.filter((n) => {});
-  console.log(filterDuplicates);
-};
+// 4
+const userIds = new Set();
+userIds.add(10);
+userIds.add(-5);
+userIds.add(-5);
 
-const newList = [1, 2, 2, 3, 4, 5, 6, 6, 7, 9, 8, 8];
-
-noDuplicateValues(newList);
+console.log(userIds);
